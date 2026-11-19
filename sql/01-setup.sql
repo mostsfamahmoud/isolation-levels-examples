@@ -1,6 +1,6 @@
 -- Tables used by every example in the article.
 -- PostgreSQL and MySQL syntax. For SQL Server and Oracle, see the
--- per-engine syntax table in the article ("Running the examples on your engine").
+-- per-engine syntax notes in the article ("Running the examples on your engine").
 
 CREATE TABLE products (
     id    INT PRIMARY KEY,

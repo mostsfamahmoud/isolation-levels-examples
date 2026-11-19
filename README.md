@@ -33,7 +33,7 @@ Each check prints `PASS` or `FAIL`. Engines that aren't running are skipped. Las
 | `sql/09-for-update-fix.sql` | Fix 1: lock the rows your rule reads | PostgreSQL |
 
 The SQL uses PostgreSQL/MySQL syntax. For SQL Server and Oracle, swap in the forms from the
-article's "Running the examples on your engine" table (for example `BEGIN TRANSACTION`, `BIT`
+article's "Running the examples on your engine" section (for example `BEGIN TRANSACTION`, `BIT`
 or `NUMBER(1)` for booleans, `WITH (UPDLOCK)`). `run_checks.py` already does this for all four.
 
 ## What the script checks

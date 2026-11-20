@@ -186,14 +186,14 @@ def pg_checks():
 
     RETRYABLE = (errors.SerializationFailure, errors.DeadlockDetected)
 
-    def run_serializable(conn, work, max_attempts=5):
+    def run_serializable(conn, work, tries=5):
         conn.isolation_level = psycopg.IsolationLevel.SERIALIZABLE
-        for attempt in range(1, max_attempts + 1):
+        for attempt in range(1, tries + 1):
             try:
                 with conn.transaction():
                     return work(conn)
             except RETRYABLE:
-                if attempt == max_attempts:
+                if attempt == tries:
                     raise
                 time.sleep(random.uniform(0, 0.05 * 2 ** attempt))
 
